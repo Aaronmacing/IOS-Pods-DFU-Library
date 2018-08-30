@@ -10,7 +10,7 @@ import Foundation
 class SoftdeviceBootloaderInfo: ManifestFirmwareInfo {
     var blSize: UInt32 = 0
     var sdSize: UInt32 = 0
-    
+    var apSize: UInt32 = 0
     override init(withDictionary aDictionary : Dictionary<String, AnyObject>) {
         super.init(withDictionary: aDictionary)
         if aDictionary.keys.contains("bl_size") {
@@ -18,6 +18,10 @@ class SoftdeviceBootloaderInfo: ManifestFirmwareInfo {
         }
         if aDictionary.keys.contains("sd_size") {
             sdSize = (aDictionary["sd_size"]!).uint32Value
+        }
+        if aDictionary.keys.contains("app_size")
+        {
+            apSize = (aDictionary["app_size"]!).uint32Value
         }
     }
 }

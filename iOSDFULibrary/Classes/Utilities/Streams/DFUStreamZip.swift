@@ -133,6 +133,7 @@ internal class DFUStreamZip : DFUStream {
                         if softdeviceBootloader.sdSize + softdeviceBootloader.blSize > 0 {
                             softdeviceSize = softdeviceBootloader.sdSize
                             bootloaderSize = softdeviceBootloader.blSize
+                            applicationSize = softdeviceBootloader.apSize
                         } else {
                             // Secure DFU does not specify SD and BL sizes in the manifest file
                             // (actually it does, but as an optional read_only value).
